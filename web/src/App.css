@@ -1,0 +1,246 @@
+.send-page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 40px 20px 64px;
+  display: grid;
+  gap: 20px;
+}
+
+.hero-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line-soft);
+  background: linear-gradient(120deg, #13133f 0%, #2b1368 52%, #7d2f51 100%);
+  color: #f6f7ff;
+  border-radius: 24px;
+  padding: 30px 28px;
+  box-shadow: 0 20px 38px rgba(16, 8, 40, 0.28);
+}
+
+.hero-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -90px -120px auto;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 210, 120, 0.42) 0%, rgba(255, 210, 120, 0) 75%);
+}
+
+.kicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: #dacdff;
+}
+
+.hero-card h1 {
+  margin: 10px 0 10px;
+  font-size: clamp(2rem, 3.8vw, 3.4rem);
+  line-height: 0.97;
+}
+
+.hero-copy {
+  margin: 0;
+  max-width: 58ch;
+  color: #e7deff;
+}
+
+.state-strip {
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-family: var(--font-mono);
+  font-size: 0.86rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.state-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #b4b4b4;
+}
+
+.state-strip[data-state="loading"] .state-dot {
+  background: #ffd25f;
+}
+
+.state-strip[data-state="success"] .state-dot {
+  background: #56ec84;
+}
+
+.state-strip[data-state="fail"] .state-dot {
+  background: #ff7b7b;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 18px;
+}
+
+.send-form,
+.status-panel {
+  border: 1px solid var(--line-soft);
+  background: linear-gradient(180deg, var(--surface) 0%, #fdfdff 100%);
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 12px 26px rgba(11, 15, 34, 0.08);
+}
+
+.send-form-header {
+  margin-bottom: 16px;
+}
+
+.panel-label {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.73rem;
+}
+
+.send-form h2,
+.status-panel h2 {
+  margin: 8px 0 0;
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.field span {
+  font-size: 0.92rem;
+}
+
+input,
+select,
+button {
+  border-radius: 12px;
+  border: 1px solid var(--line-soft);
+  font: inherit;
+}
+
+input,
+select {
+  padding: 12px 13px;
+  background: #ffffff;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid rgba(48, 36, 159, 0.24);
+  border-color: var(--brand-ink);
+}
+
+.hint {
+  margin: 2px 0 0;
+  color: var(--muted);
+  min-height: 20px;
+}
+
+.hint.error {
+  color: var(--danger-ink);
+}
+
+.send-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 11px 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.14s ease, box-shadow 0.14s ease, opacity 0.14s ease;
+}
+
+.btn:disabled {
+  opacity: 0.58;
+  cursor: not-allowed;
+}
+
+.btn:hover:enabled {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: linear-gradient(110deg, #1b1d66 0%, #5431a6 90%);
+  color: #f7f7ff;
+  border-color: #3e2c8c;
+  box-shadow: 0 8px 20px rgba(44, 37, 112, 0.25);
+}
+
+.btn-ghost {
+  background: #fff;
+  color: var(--brand-ink);
+}
+
+.status-panel {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+.status-text {
+  margin: 0;
+  color: var(--muted);
+}
+
+.message {
+  border-radius: 14px;
+  border: 1px solid;
+  padding: 14px;
+  display: grid;
+  gap: 7px;
+  word-break: break-word;
+}
+
+.message h3,
+.message p {
+  margin: 0;
+}
+
+.message.success {
+  background: #ecfff3;
+  border-color: #b4efc8;
+  color: #134927;
+}
+
+.message.error {
+  background: #fff1f1;
+  border-color: #ffc8c8;
+  color: #7a1f1f;
+}
+
+.message a {
+  color: currentColor;
+}
+
+@media (max-width: 900px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .send-page {
+    padding: 26px 14px 40px;
+  }
+
+  .hero-card {
+    padding: 24px 18px;
+  }
+}
